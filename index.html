@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesona Batik Nusantara - Warisan Budaya Indonesia</title>
+
+    <!-- FAVICON (Ikon Batik untuk Tab Browser) -->
+    <link rel="icon" href="images/fav icon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet Utama -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. LOADING SCREEN -->
+    <div id="loader" class="loader-wrapper">
+        <div class="loader-content">
+            <div class="loader-spinner">
+                <svg class="loader-icon" viewBox="0 0 100 100" fill="none">
+                    <circle cx="50" cy="50" r="42" stroke="currentColor" stroke-width="3" stroke-dasharray="18 10"/>
+                    <circle cx="50" cy="50" r="28" stroke="currentColor" stroke-width="2"/>
+                    <path d="M50 15 L50 85 M15 50 L85 50" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </div>
+            <p class="loader-text">Memuat Keindahan Batik...</p>
+        </div>
+    </div>
+
+    <!-- 2. NAVBAR -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="brand-logo">
+                <span class="logo-mark">❖</span>
+                <span class="logo-text">BatikNusantara</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#hero">Beranda</a>
+                <a href="#galeri">Ragam Motif</a>
+                <a href="#filosofi">Filosofi</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 3. HERO SECTION -->
+    <section id="hero" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Keindahan Batik,<br>Kekayaan Budaya Indonesia.</h1>
+            <p class="hero-subtitle">
+                Jelajahi keajaiban dan filosofi mendalam di balik setiap helai kain batik yang menawan.
+            </p>
+            <a href="#galeri" class="btn btn-gold">Eksplorasi Motif</a>
+        </div>
+    </section>
+
+    <!-- 4. GALERI MOTIF (CARDS) -->
+    <section id="galeri" class="section-motif">
+        <div class="section-header">
+            <h2>Koleksi Motif Klasik</h2>
+            <p>Setiap goresan canting menyimpan makna spiritual dan sejarah luhur.</p>
+        </div>
+
+        <div class="motif-grid">
+            
+            <!-- Card 1: Kawung Kawitan -->
+            <article class="motif-card">
+                <div class="card-thumb">
+                    <img src="images/images 1.jpg" alt="Motif Batik Kawung" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <h3>Kawung Kawitan</h3>
+                    <p>Simbol kesucian hati, keadilan, dan pengendalian diri yang terinspirasi dari buah kolang-kaling.</p>
+                    <button class="btn-text" onclick="openDetail('kawung')">Buka Detail &rarr;</button>
+                </div>
+            </article>
+
+            <!-- Card 2: Parang Rusak -->
+            <article class="motif-card">
+                <div class="card-thumb">
+                    <img src="images/images 2.jpg" alt="Motif Batik Parang" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <h3>Parang Rusak</h3>
+                    <p>Melambangkan semangat perjuangan tanpa henti bagaikan ombak samudera yang menerjang karang.</p>
+                    <button class="btn-text" onclick="openDetail('parang')">Buka Detail &rarr;</button>
+                </div>
+            </article>
+
+            <!-- Card 3: Truntum -->
+            <article class="motif-card">
+                <div class="card-thumb">
+                    <img src="images/images 3.jpg" alt="Motif Batik Truntum" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <h3>Truntum</h3>
+                    <p>Pesan tulus tentang cinta yang bersemi kembali, ketulusan, dan kesetiaan tanpa syarat.</p>
+                    <button class="btn-text" onclick="openDetail('truntum')">Buka Detail &rarr;</button>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- 5. MODAL POPUP DETAIL -->
+    <div id="motifModal" class="modal-backdrop" onclick="closeModal(event)">
+            <div class="modal-box">
+                <button class="modal-close" onclick="closeModalForce()">&times;</button>
+                <div class="modal-body">
+                    <div class="modal-img-frame">
+                        <img id="modalImg" src="images 1.jpg" alt="Detail Motif" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%233d2314\'/><circle cx=\'50\' cy=\'50\' r=\'35\' fill=\'%23c69c4e\'/></svg>'">
+                    </div>
+                    <div class="modal-info">
+                        <h3 id="modalTitle">Judul Motif</h3>
+                        <span id="modalOrigin" class="badge-origin">Asal Daerah</span>
+                        <p id="modalDesc">Penjelasan filosofi detail batik.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <!--6. SECTION PENJELASAN LENGKAP BERSAMA KARTU EDUKASI -->
+    <section id="filosofi" class="section-batik-info">
+            <div class="info-container">
+                
+                <!-- Header Penjelasan Utama -->
+                <div class="info-main-header">
+                    <h2>Mengenal Seni & Warisan Batik Indonesia</h2>
+                    <p class="lead-text">
+                        Batik bukan sekadar kain bermotif indah, melainkan media ekspresi budaya, spiritualitas, dan sejarah luhur Nusantara yang ditorehkan melalui goresan canting dan perintangan malam.
+                    </p>
+                </div>
+
+                <!-- Narasi Sejarah & Makna -->
+                <div class="info-narrative-grid">
+                    <div class="narrative-box">
+                        <h3>Asal-Usul & Makna Kata</h3>
+                        <p>
+                            Istilah <strong>"Batik"</strong> berasal dari bahasa Jawa, yaitu gabungan kata <em>"amba"</em> (menulis/mengecerkan) dan <em>"titik"</em> (membuat titik). Secara garis besar, membatik adalah seni menggambar motif pada kain menggunakan cairan lilin (malam) panas dengan alat khusus bernama canting untuk menahan resapan warna.
+                        </p>
+                        <p>
+                            Jejak sejarah batik di Indonesia telah berkembang pesat sejak zaman Kerajaan Majapahit, Mataram Islam, hingga Surakarta dan Yogyakarta. Setiap daerah di Nusantara melahirkan ragam hias khas yang mencerminkan identitas geografis dan pandangan hidup masyarakat setempat.
+                        </p>
+                    </div>
+
+                    <div class="narrative-box highlight-box">
+                        <h3>Pengakuan Warisan Dunia (UNESCO)</h3>
+                        <p>
+                            Pada tanggal <strong>2 Oktober 2009</strong>, UNESCO secara resmi menetapkan Batik Indonesia sebagai <em>Masterpiece of the Oral and Intangible Heritage of Humanity</em> (Warisan Kemanusiaan untuk Budaya Lisan dan Nonbendawi).
+                        </p>
+                        <p>
+                            Pengakuan ini diberikan karena batik dinilai memiliki nilai simbolis yang kuat, melingkupi seluruh siklus kehidupan manusia Indonesia—mulai dari kelahiran, pernikahan, hingga tradisi keagamaan.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 4 Kartu Wawasan Teknik & Jenis Batik -->
+                <div class="insights-grid">
+                    
+                    <div class="insight-card">
+                        <div class="insight-number">01</div>
+                        <h4>Batik Tulis</h4>
+                        <p>Proses paling tradisional menggunakan canting dan lilin malam secara manual. Membutuhkan waktu pengerjaan 1 hingga 6 bulan demi ketelitian tinggi.</p>
+                    </div>
+
+                    <div class="insight-card">
+                        <div class="insight-number">02</div>
+                        <h4>Batik Cap</h4>
+                        <p>Proses perintangan warna menggunakan stempel tembaga berukir motif. Teknik ini diciptakan pada abad ke-19 untuk mempercepat proses produksi.</p>
+                    </div>
+
+                    <div class="insight-card">
+                        <div class="insight-number">03</div>
+                        <h4>Batik Pesisiran</h4>
+                        <p>Batik yang berkembang di wilayah pesisir seperti Pekalongan dan Cirebon. Cenderung menggunakan warna cerah berani dan pengaruh budaya luar.</p>
+                    </div>
+
+                    <div class="insight-card">
+                        <div class="insight-number">04</div>
+                        <h4>Batik Keraton</h4>
+                        <p>Batik bernuansa cokelat sogan, krem, dan hitam dari lingkungan keraton Jawa. Penuh syarat norma, derajat sosial, dan filosofi kehidupan.</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    <!-- 7. FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2026 BatikNusantara. Dikembangkan untuk melestarikan budaya bangsa.</p>
+        </div>
+    </footer>
+
+    <!-- Script Utama -->
+    <script src="script.js"></script>
+</body>
+</html>
